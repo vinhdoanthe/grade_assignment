@@ -1,0 +1,46 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h4 class="display-4">Grading area</h4>
+    <p class="lead"><%= @grade_record.rubric.assignment %>.</p>
+  </div>
+</div>
+
+<%= simple_form_for @grade_record do |form| %>
+  <%= form.input :rubric_id, as: :hidden, value: @grade_record.rubric_id %>
+  <span><%= @grade_record.rubric.description %></span>
+  <%= form.input :learner_email, as: :email %>
+  <%= form.input :mentor_email, as: :email %>
+  <table class="table table-stripped table-hover table-bordered">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Criteria</th>
+      <th>Meet the specification</th>
+      <th>Weight</th>
+      <th>Mandatory</th>
+      <th>(Point/Pass_Fail)</th>
+      <th>Comment</th>
+    </tr>
+    </thead>
+    <tbody>
+    <%= form.simple_fields_for :grade_criterias do |criteria_form| %>
+      <tr>
+        <th><%= criteria_form.object.index %></th>
+        <td><span><%= criteria_form.object.criteria %></span></td>
+        <td><span><%= criteria_form.object.meet_the_specification %></span></td>
+        <td><span><%= criteria_form.object.weight %></span></td>
+        <td><span><%= criteria_form.object.mandatory %></span></td>
+        <% if criteria_form.object.criteria_type == Constants::CRITERIA_TYPE_PASS_FAIL %>
+          <td><%= criteria_form.input :status %></td>
+        <% else %>
+          <td><%= criteria_form.input :point, collection: 0...(Constants::CRITERIA_MAX_POINT + 1) %></td>
+        <% end %>
+        <td><%= criteria_form.input :comment, as: :text, input_html: {rows: 3} %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <%= form.input :comment, as: :text %>
+  <%= form.button :submit, "Submit grade" %>
+<% end %>
