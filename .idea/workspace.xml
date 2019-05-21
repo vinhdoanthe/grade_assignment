@@ -57,7 +57,7 @@
           <entry key="erb" value="2577" />
           <entry key="js" value="2" />
           <entry key="md" value="76" />
-          <entry key="rb" value="5404" />
+          <entry key="rb" value="5405" />
           <entry key="scss" value="8" />
         </counts>
       </usages-collector>
@@ -66,7 +66,7 @@
           <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="76" />
           <entry key="RHTML" value="2577" />
-          <entry key="Ruby" value="5404" />
+          <entry key="Ruby" value="5405" />
           <entry key="SCSS" value="8" />
         </counts>
       </usages-collector>
@@ -104,8 +104,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/migrate/20190520175120_update_grade_record.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="126">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -516,12 +516,12 @@
       <workItem from="1558349075085" duration="2502000" />
       <workItem from="1558363845949" duration="8953000" />
       <workItem from="1558405691507" duration="25364000" />
-      <workItem from="1558443643001" duration="1438000" />
+      <workItem from="1558443643001" duration="1557000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43443000" />
+    <option name="totallyTimeSpent" value="43562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
@@ -844,8 +844,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20190520175120_update_grade_record.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="126">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
