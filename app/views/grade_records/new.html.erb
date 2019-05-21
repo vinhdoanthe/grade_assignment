@@ -5,11 +5,12 @@
   </div>
 </div>
 
-<%= simple_form_for @grade_record do |form| %>
+<%= simple_form_for @grade_record, validate: true do |form| %>
   <%= form.input :rubric_id, as: :hidden, value: @grade_record.rubric_id %>
+  <%= form.input :grade_type, as: :hidden, value: @grade_record.grade_type %>
   <span><%= @grade_record.rubric.description %></span>
-  <%= form.input :learner_email, as: :email %>
-  <%= form.input :mentor_email, as: :email %>
+  <%= form.input :learner_email, as: 'email' %>
+  <%= form.input :mentor_email, as: 'email' %>
   <table class="table table-stripped table-hover table-bordered">
     <thead>
     <tr>
@@ -23,17 +24,26 @@
     </tr>
     </thead>
     <tbody>
-    <%= form.simple_fields_for :grade_criterias do |criteria_form| %>
+    <%= form.simple_fields_for :grade_crites do |criteria_form| %>
       <tr>
         <th><%= criteria_form.object.index %></th>
-        <td><span><%= criteria_form.object.criteria %></span></td>
+        <%= criteria_form.input :index, as: :hidden, value: criteria_form.object.index %>
+        <td><span><%= criteria_form.object.criteria_description %></span></td>
+        <%= criteria_form.input :criteria_description, as: :hidden, value: criteria_form.object.criteria_description %>
+
+        <%= criteria_form.input :outcome, as: :hidden, value: criteria_form.object.outcome %>
+
         <td><span><%= criteria_form.object.meet_the_specification %></span></td>
+        <%= criteria_form.input :meet_the_specification, as: :hidden, value: criteria_form.object.meet_the_specification %>
         <td><span><%= criteria_form.object.weight %></span></td>
+        <%= criteria_form.input :weight, as: :hidden, value: criteria_form.object.weight %>
         <td><span><%= criteria_form.object.mandatory %></span></td>
+        <%= criteria_form.input :mandatory, as: :hidden, value: criteria_form.object.mandatory %>
+        <%= criteria_form.input :criteria_type, as: :hidden, value: criteria_form.object.criteria_type %>
         <% if criteria_form.object.criteria_type == Constants::CRITERIA_TYPE_PASS_FAIL %>
-          <td><%= criteria_form.input :status %></td>
+          <td><%= criteria_form.input :status, validate: {presence: true} %></td>
         <% else %>
-          <td><%= criteria_form.input :point, collection: 0...(Constants::CRITERIA_MAX_POINT + 1) %></td>
+          <td><%= criteria_form.input :point, collection: 0...(Constants::CRITERIA_MAX_POINT + 1), validate: {presence: true} %></td>
         <% end %>
         <td><%= criteria_form.input :comment, as: :text, input_html: {rows: 3} %></td>
       </tr>
@@ -42,5 +52,5 @@
   </table>
 
   <%= form.input :comment, as: :text %>
-  <%= form.button :submit, "Submit grade" %>
+  <%= form.button :submit, "Submit grade!", class: 'btn-block' %>
 <% end %>

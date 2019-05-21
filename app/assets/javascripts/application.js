@@ -17,3 +17,5 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require rails.validations
+//= require rails.validations.simple_form.bootstrap4

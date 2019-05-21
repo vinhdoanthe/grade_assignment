@@ -6,9 +6,12 @@ module Constants
 
   CRITERIA_STATUS_PASSED = 'passed'
   CRITERIA_STATUS_FAILED = 'failed'
-
-  RUBRIC_STATUS_PASSED = 'passed'
-  RUBRIC_STATUS_NOT_PASSED = 'not passed'
-
   CRITERIA_MAX_POINT = 5
+
+  GRADE_TYPE_REGRADE = 'regrade'
+  GRADE_TYPE_FIRSTGRADE = 'first grade'
+  GRADE_STATUS_PASSED = 'passed'
+  GRADE_STATUS_NOT_PASSED = 'not passed'
+
+  KHAO_THI_EMAIL = 'funix-daotao@funix.edu.vn'
 end

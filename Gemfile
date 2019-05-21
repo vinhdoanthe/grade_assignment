@@ -10,6 +10,13 @@ gem 'simple_form'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'enumerize'
+gem "figaro"
+gem 'client_side_validations'
+gem 'client_side_validations-simple_form'
+gem 'capistrano', '~> 3.11'
+gem 'capistrano-rails', '~> 1.4'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

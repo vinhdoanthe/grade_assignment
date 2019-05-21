@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_20_175512) do
+ActiveRecord::Schema.define(version: 2019_05_21_090639) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -38,24 +38,24 @@ ActiveRecord::Schema.define(version: 2019_05_20_175512) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "criteria", force: :cascade do |t|
+  create_table "crites", force: :cascade do |t|
+    t.integer "rubric_id"
     t.integer "index"
-    t.string "criteria"
+    t.string "criteria_description"
     t.string "outcome"
     t.text "meet_the_specification"
-    t.decimal "weight"
     t.boolean "mandatory"
     t.string "criteria_type"
+    t.decimal "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "rubric_id"
-    t.index ["rubric_id"], name: "index_criteria_on_rubric_id"
+    t.index ["rubric_id"], name: "index_crites_on_rubric_id"
   end
 
-  create_table "grade_criteria", force: :cascade do |t|
+  create_table "grade_crites", force: :cascade do |t|
     t.integer "grade_record_id"
     t.integer "index"
-    t.string "criteria"
+    t.string "criteria_description"
     t.string "outcome"
     t.text "meet_the_specification"
     t.string "status"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_05_20_175512) do
     t.decimal "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["grade_record_id"], name: "index_grade_criteria_on_grade_record_id"
+    t.index ["grade_record_id"], name: "index_grade_crites_on_grade_record_id"
   end
 
   create_table "grade_records", force: :cascade do |t|
@@ -76,8 +76,9 @@ ActiveRecord::Schema.define(version: 2019_05_20_175512) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "learner_email"
     t.string "mentor_email"
+    t.string "learner_email"
+    t.string "grade_type"
     t.index ["rubric_id"], name: "index_grade_records_on_rubric_id"
   end
 
