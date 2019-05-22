@@ -5,9 +5,9 @@
 
 server '35.186.150.164', user: 'deploy', roles: %w{app db web}
 
-set :sidekiq_role, :app
-set :sidekiq_config, "#{current_path}/config/sidekiq.yml"
-set :sidekiq_env, 'production'
+# set :sidekiq_role, :app
+# set :sidekiq_config, "#{current_path}/config/sidekiq.yml"
+# set :sidekiq_env, 'production'
 
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
