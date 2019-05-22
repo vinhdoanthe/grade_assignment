@@ -1,15 +1,14 @@
 ActiveAdmin.register Mentor do
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
+  form do |form|
+    title form.object.new_record? ? 'Add new user' : 'Edit user'
+    form.semantic_errors
+    inputs 'Mentor information' do
+      form.input :email
+      form.input :password
+    end
+    form.actions
+  end
+
+  permit_params :email, :password
 
 end

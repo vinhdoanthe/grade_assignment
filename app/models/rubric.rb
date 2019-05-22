@@ -1,5 +1,7 @@
 class Rubric < ApplicationRecord
-  has_many :crites
+  has_many :crites, dependent: :destroy
+
+  accepts_nested_attributes_for :crites
 
   def display_name
     "Rubric #{rubric_code}"

@@ -21,7 +21,7 @@ Rails.application.configure do
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.to_i}"
+        'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
@@ -32,15 +32,17 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
+  config.active_job.queue_adapter = :sidekiq
+
   # Config mailer SMTP
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    user_name: ENV['gmail_username'],
-    password: ENV['gmail_password'],
-    authentication: 'plain',
-    enable_starttls_auto: true
+      address: 'smtp.gmail.com',
+      port: 587,
+      user_name: ENV['gmail_username'],
+      password: ENV['gmail_password'],
+      authentication: 'plain',
+      enable_starttls_auto: true
   }
 
   # Don't care if the mailer can't send.

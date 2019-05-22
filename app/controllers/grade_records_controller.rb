@@ -62,7 +62,7 @@ class GradeRecordsController < ApplicationController
     puts "@grade_record #{@grade_record.inspect}"
     @grade_record.calculate_point
     if @grade_record.save
-      GradeRecordMailer.complete_grade_email(@grade_record).deliver
+      GradeRecordMailer.complete_grade_email(@grade_record).deliver_later
       render :graded_completed
     else
       # render :new, locals: { rubric_code: @grade_record.rubric.rubric_code }

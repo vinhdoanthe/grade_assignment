@@ -1,12 +1,17 @@
 # frozen_string_literal: true
 
 class GradeRecord < ApplicationRecord
+  extend Enumerize
+
   belongs_to :rubric
   has_many :grade_crites, dependent: :destroy
   accepts_nested_attributes_for :grade_crites
   validates :learner_email, presence: true
   validates :mentor_email, presence: true
   validates :comment, presence: true
+
+  enumerize :grade_type, in: [Constants::GRADE_TYPE_FIRSTGRADE, Constants::GRADE_TYPE_REGRADE]
+  attribute :grade_type, default: Constants::GRADE_TYPE_FIRSTGRADE
 
   def display_name
     "Grade for #{rubric.assignment}"
