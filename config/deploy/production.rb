@@ -5,22 +5,9 @@
 
 server '35.186.150.164', user: 'deploy', roles: %w{app db web}
 
-namespace :sidekiq do
-  task :quiet do
-    on roles(:app) do
-      puts capture("pgrep -f 'sidekiq' | xargs kill -TSTP")
-    end
-  end
-  task :restart do
-    on roles(:app) do
-      execute :sudo, :initctl, :restart, :workers
-    end
-  end
-end
-
-after 'deploy:starting', 'sidekiq:quiet'
-after 'deploy:reverted', 'sidekiq:restart'
-after 'deploy:published', 'sidekiq:restart'
+set :sidekiq_role, :app
+set :sidekiq_config, "#{current_path}/config/sidekiq.yml"
+set :sidekiq_env, 'production'
 
 # server "example.com", user: "deploy", roles: %w{app db web}, my_property: :my_value
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value

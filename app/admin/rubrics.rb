@@ -5,9 +5,12 @@ ActiveAdmin.register Rubric do
                                       mandatory weight _destroy]
 
   show do
-    panel 'Assignment' do
-      h2 rubric.assignment
+    attributes_table do
+      row :rubric_code
+      row :assignment
+      row :description
     end
+
     panel 'Criteria' do
       table_for rubric.crites do
         column :index
@@ -24,6 +27,7 @@ ActiveAdmin.register Rubric do
   form do |form|
     form.semantic_errors
     form.inputs 'Assignment' do
+      form.input :rubric_code
       form.input :assignment
       form.input :description
     end

@@ -3,6 +3,8 @@ class Rubric < ApplicationRecord
 
   accepts_nested_attributes_for :crites
 
+  validates :rubric_code, presence: true
+
   def display_name
     "Rubric #{rubric_code}"
   end
