@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_22_030308) do
+ActiveRecord::Schema.define(version: 2019_05_22_063051) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2019_05_22_030308) do
     t.string "mentor_email"
     t.string "learner_email"
     t.string "grade_type"
+    t.string "learner_name"
     t.index ["rubric_id"], name: "index_grade_records_on_rubric_id"
   end
 
@@ -106,6 +107,7 @@ ActiveRecord::Schema.define(version: 2019_05_22_030308) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "rubric_code"
+    t.string "course_instance"
   end
 
 end

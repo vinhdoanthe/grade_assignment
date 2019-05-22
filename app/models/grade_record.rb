@@ -59,4 +59,17 @@ class GradeRecord < ApplicationRecord
       end
     end
   end
+
+  def build_content
+    sheet_values = Array.new
+
+    sheet_values << Time.now.strftime('%d-%m-%Y')
+    puts "Time.now #{Time.now.strftime('%d-%m-%Y')}"
+    sheet_values << rubric.course_instance
+    sheet_values << rubric.assignment
+    sheet_values << mentor_email
+    sheet_values << learner_email
+    sheet_values << learner_name
+    # TODO: Update grade_criterias
+  end
 end

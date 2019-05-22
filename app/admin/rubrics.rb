@@ -1,5 +1,5 @@
 ActiveAdmin.register Rubric do
-  permit_params :rubric_code, :assignment, :description,
+  permit_params :rubric_code, :course_instance, :assignment, :description,
                 crites_attributes: %i[id index criteria_description
                                       outcome meet_the_specification criteria_type
                                       mandatory weight _destroy]
@@ -7,6 +7,7 @@ ActiveAdmin.register Rubric do
   show do
     attributes_table do
       row :rubric_code
+      row :course_instance
       row :assignment
       row :description
     end
@@ -28,6 +29,7 @@ ActiveAdmin.register Rubric do
     form.semantic_errors
     form.inputs 'Assignment' do
       form.input :rubric_code
+      form.input :course_instance
       form.input :assignment
       form.input :description
     end

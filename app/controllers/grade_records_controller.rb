@@ -63,6 +63,7 @@ class GradeRecordsController < ApplicationController
     @grade_record.calculate_point
     if @grade_record.save
       GradeRecordMailer.complete_grade_email(@grade_record).deliver_later
+      UpdateGoogleSheetJob.perform_later(@grade_record)
       render :graded_completed
     else
       # render :new, locals: { rubric_code: @grade_record.rubric.rubric_code }
