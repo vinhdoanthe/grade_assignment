@@ -64,13 +64,11 @@ class GradeRecordsController < ApplicationController
     if @grade_record.save
       GradeRecordMailer.complete_grade_email(@grade_record).deliver_later
       UpdateGoogleSheetJob.perform_later(@grade_record)
-      render :graded_completed
+      flash[:success] = "Submit grade successfully. Thank you, mentor #{current_mentor.email}"
+      redirect_to root_path
     else
       # render :new, locals: { rubric_code: @grade_record.rubric.rubric_code }
     end
-  end
-
-  def graded_completed;
   end
 
   private

@@ -14,4 +14,6 @@ module Constants
   GRADE_STATUS_NOT_PASSED = 'not passed'
 
   KHAO_THI_EMAIL = 'funix-daotao@funix.edu.vn'
+
+  MAX_NUM_GRADE_CRITERIA = 18
 end

@@ -1,10 +1,22 @@
 <component name="ProjectDictionaryState">
   <dictionary name="vinhdt">
     <words>
+      <w>activeadmin</w>
+      <w>bcrypt</w>
+      <w>bootsnap</w>
+      <w>byebug</w>
+      <w>capybara</w>
+      <w>chromedriver</w>
       <w>criterias</w>
       <w>crites</w>
       <w>enumerize</w>
+      <w>jbuilder</w>
       <w>jumbotron</w>
+      <w>omniauth</w>
+      <w>rbenv</w>
+      <w>sidekiq</w>
+      <w>turbolinks</w>
+      <w>uglifier</w>
     </words>
   </dictionary>
 </component>

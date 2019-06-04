@@ -1,4 +1,6 @@
 ActiveAdmin.register Mentor do
+  active_admin_import
+  
   form do |form|
     title form.object.new_record? ? 'Add new user' : 'Edit user'
     form.semantic_errors

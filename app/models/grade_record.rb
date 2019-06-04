@@ -37,7 +37,6 @@ class GradeRecord < ApplicationRecord
     self.point = 10 * (point / rubric.total_weight)
     if grade_type == Constants::GRADE_TYPE_REGRADE
       self.point = point / 2
-      # Do not divide to 2
     end
 
     # Calculate status
@@ -63,13 +62,55 @@ class GradeRecord < ApplicationRecord
   def build_content
     sheet_values = Array.new
 
-    sheet_values << Time.now.strftime('%d-%m-%Y')
+    sheet_values.append Time.now.strftime('%d-%m-%Y').to_s
     puts "Time.now #{Time.now.strftime('%d-%m-%Y')}"
-    sheet_values << rubric.course_instance
-    sheet_values << rubric.assignment
-    sheet_values << mentor_email
-    sheet_values << learner_email
-    sheet_values << learner_name
-    # TODO: Update grade_criterias
+    sheet_values.append rubric.course_instance.to_s
+    sheet_values.append rubric.assignment.to_s
+    sheet_values.append mentor_email.to_s
+    sheet_values.append learner_email.to_s
+    sheet_values.append learner_email.to_s
+    if grade_type == Constants::GRADE_TYPE_REGRADE
+      criterias = ''
+      grade_crites.each do |grade_criteria|
+        criterias += " #{grade_criteria.index}"
+      end
+      sheet_values.append(criterias)
+    end
+    crites_size = grade_crites.size
+    failed_list = 'NOT PASSED'
+    grade_crites.each do |grade_criteria|
+      grade_criteria_point = 0
+      if grade_criteria.criteria_type == Constants::CRITERIA_TYPE_PASS_FAIL
+        if grade_criteria.status == Constants::CRITERIA_STATUS_PASSED
+          grade_criteria_point = grade_criteria.weight / rubric.total_weight
+          if grade_type == Constants::GRADE_TYPE_REGRADE
+            grade_criteria_point /= 2
+          end
+        else
+          failed_list += " #{grade_criteria.index}"
+        end
+      else # CRITERIA_TYPE_POINT
+        grade_criteria_point = ((grade_criteria.point / Constants::CRITERIA_MAX_POINT) * grade_criteria.weight) / rubric.total_weight
+        if grade_type == Constants::GRADE_TYPE_REGRADE
+          grade_criteria_point /= 2
+        end
+        if grade_criteria_point.zero?
+          failed_list += " #{grade_criteria.index}"
+        end
+      end
+      sheet_values.append(10 * grade_criteria_point)
+      sheet_values.append(grade_criteria.comment)
+    end
+    while crites_size < Constants::MAX_NUM_GRADE_CRITERIA
+      2.times {sheet_values.append('x')}
+      crites_size += 1
+    end
+    sheet_values.append(comment)
+    # Final point
+    if status == Constants::GRADE_STATUS_PASSED
+      sheet_values.append(point)
+    else
+      sheet_values.append(failed_list)
+    end
   end
 end
