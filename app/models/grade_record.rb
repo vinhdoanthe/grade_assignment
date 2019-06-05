@@ -113,4 +113,14 @@ class GradeRecord < ApplicationRecord
       sheet_values.append(failed_list)
     end
   end
+
+  def list_failed_criteria
+    list_str = ''
+    grade_crites.each do |grade_criteria|
+      if grade_criteria.get_status == Constants::CRITERIA_STATUS_FAILED
+        list_str = list_str + ' '+ grade_criteria.index.to_s + ','
+      end
+    end
+    list_str
+  end
 end
