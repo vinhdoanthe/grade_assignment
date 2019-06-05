@@ -10,7 +10,7 @@
   <%= form.input :grade_type, as: :hidden, value: @grade_record.grade_type %>
   <span><%= @grade_record.rubric.description %></span>
   <%= form.input :learner_email, as: 'email' %>
-  <%= form.input :mentor_email, :as => :hidden, :input_html => { :value => current_mentor.email } %>
+  <%= form.input :mentor_email, :as => :hidden, :input_html => {:value => current_mentor.email} %>
   <table class="table table-stripped table-hover table-bordered">
     <thead>
     <tr>
@@ -28,16 +28,16 @@
       <tr>
         <th><%= criteria_form.object.index %></th>
         <%= criteria_form.input :index, as: :hidden, value: criteria_form.object.index %>
-        <td><p><%= criteria_form.object.criteria_description %></p></td>
+        <td><span><%= criteria_form.object.criteria_description %></span></td>
         <%= criteria_form.input :criteria_description, as: :hidden, value: criteria_form.object.criteria_description %>
 
         <%= criteria_form.input :outcome, as: :hidden, value: criteria_form.object.outcome %>
 
-        <td><pre><%= criteria_form.object.meet_the_specification %></pre></td>
+        <td><span><%= criteria_form.object.meet_the_specification %></span></td>
         <%= criteria_form.input :meet_the_specification, as: :hidden, value: criteria_form.object.meet_the_specification %>
-        <td><p><%= criteria_form.object.weight %></p></td>
+        <td><span><%= criteria_form.object.weight %></span></td>
         <%= criteria_form.input :weight, as: :hidden, value: criteria_form.object.weight %>
-        <td><p><%= criteria_form.object.mandatory %></p></td>
+        <td><span><%= criteria_form.object.mandatory %></span></td>
         <%= criteria_form.input :mandatory, as: :hidden, value: criteria_form.object.mandatory %>
         <%= criteria_form.input :criteria_type, as: :hidden, value: criteria_form.object.criteria_type %>
         <% if criteria_form.object.criteria_type == Constants::CRITERIA_TYPE_PASS_FAIL %>

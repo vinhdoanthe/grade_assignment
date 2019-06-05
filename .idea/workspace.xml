@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2b0cd56-173c-4559-aec3-b198cdf9263c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/grade_crite.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/grade_crite.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/grade_record.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/grade_record.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/grade_record_mailer/complete_grade_email.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/grade_record_mailer/complete_grade_email.html.erb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/grade_records/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/grade_records/new.html.erb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -22,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/grade_records/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            <state relative-caret-position="479">
+              <caret line="39" column="17" selection-end-line="55" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -40,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/grade_record.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="116" column="26" lean-forward="true" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
+            <state relative-caret-position="654">
+              <caret line="110" column="32" lean-forward="true" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -208,10 +204,10 @@
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
-        <option value="$PROJECT_DIR$/app/views/grade_records/new.html.erb" />
         <option value="$PROJECT_DIR$/app/models/grade_crite.rb" />
         <option value="$PROJECT_DIR$/app/views/grade_record_mailer/complete_grade_email.html.erb" />
         <option value="$PROJECT_DIR$/app/models/grade_record.rb" />
+        <option value="$PROJECT_DIR$/app/views/grade_records/new.html.erb" />
       </list>
     </option>
   </component>
@@ -549,12 +545,12 @@
       <workItem from="1559643947144" duration="1751000" />
       <workItem from="1559704974483" duration="602000" />
       <workItem from="1559725487600" duration="1366000" />
-      <workItem from="1559760718500" duration="2504000" />
+      <workItem from="1559760718500" duration="2816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94063000" />
+    <option name="totallyTimeSpent" value="94375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
@@ -885,17 +881,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/grade_records/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/grade_crite.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="22" column="103" selection-start-line="22" selection-start-column="103" selection-end-line="22" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/grade_record.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="654">
+          <caret line="110" column="32" lean-forward="true" selection-start-line="110" selection-start-column="32" selection-end-line="110" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -906,10 +902,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/grade_record.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/grade_records/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="116" column="26" lean-forward="true" selection-start-line="116" selection-start-column="26" selection-end-line="116" selection-end-column="26" />
+        <state relative-caret-position="479">
+          <caret line="39" column="17" selection-end-line="55" selection-end-column="9" />
         </state>
       </provider>
     </entry>
