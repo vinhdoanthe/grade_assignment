@@ -9,6 +9,7 @@
   <%= form.input :rubric_id, as: :hidden, value: @grade_record.rubric_id %>
   <%= form.input :grade_type, as: :hidden, value: @grade_record.grade_type %>
   <span><%= @grade_record.rubric.description %></span>
+  <hr>
   <%= form.input :learner_email, as: 'email',  placeholder: 'learner email' %>
   <%= form.input :mentor_email, :as => :hidden, :input_html => {:value => current_mentor.email} %>
   <table class="table table-stripped table-hover table-bordered">
