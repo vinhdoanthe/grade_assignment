@@ -16,11 +16,11 @@
     <tr>
       <th>#</th>
       <th>Criteria</th>
-      <th>Meet the specification</th>
+      <th style="width: 30%;">Meet the specification</th>
       <th>Weight</th>
       <th>Mandatory</th>
       <th>(Point/Pass_Fail)</th>
-      <th>Comment</th>
+      <th style="width: 30%;">Comment</th>
     </tr>
     </thead>
     <tbody>
@@ -37,7 +37,7 @@
         <%= criteria_form.input :meet_the_specification, as: :hidden, value: criteria_form.object.meet_the_specification %>
         <td><span><%= criteria_form.object.weight %></span></td>
         <%= criteria_form.input :weight, as: :hidden, value: criteria_form.object.weight %>
-        <td><span><%= criteria_form.object.mandatory %></span></td>
+        <td><span><%= criteria_form.object.mandatory ? 'yes' : 'no' %></span></td>
         <%= criteria_form.input :mandatory, as: :hidden, value: criteria_form.object.mandatory %>
         <%= criteria_form.input :criteria_type, as: :hidden, value: criteria_form.object.criteria_type %>
         <% if criteria_form.object.criteria_type == Constants::CRITERIA_TYPE_PASS_FAIL %>
