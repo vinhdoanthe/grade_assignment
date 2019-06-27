@@ -70,7 +70,7 @@ class GradeRecord < ApplicationRecord
     sheet_values.append learner_email.to_s
     sheet_values.append learner_email.to_s
     if grade_type == Constants::GRADE_TYPE_REGRADE
-      criterias = ''
+      criterias = '`'
       grade_crites.each do |grade_criteria|
         criterias += " #{grade_criteria.index}"
       end
